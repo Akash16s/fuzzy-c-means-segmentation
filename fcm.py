@@ -1,11 +1,9 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import skfuzzy as fuzz
 import os
 import cv2
-import numpy as np
 from time import time
-
 
 def change_color_fuzzycmeans(cluster_membership, clusters):
     img = []
@@ -14,7 +12,7 @@ def change_color_fuzzycmeans(cluster_membership, clusters):
     return img
 
 def readimage():
-    folder = 'image/'
+    folder = './sample_Signature/genuine/'
     list_images = os.listdir(folder)
     list_img = []
     for i in list_images:
@@ -134,7 +132,7 @@ clusters = [2,3,6]
 
 # looping every images
 for index,rgb_img in enumerate(list_img):
-    img = np.reshape(rgb_img, (200,200,3)).astype(np.uint8)
+    img = np.reshape(rgb_img, (1050, 1057, 3)).astype(np.uint8)
     shape = np.shape(img)
     
     
