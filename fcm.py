@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib as plt
+import matplotlib.pyplot as pyplot
 import skfuzzy as fuzz
 import os
 import cv2
@@ -137,13 +138,13 @@ for index,rgb_img in enumerate(list_img):
     
     
     # initialize graph
-    plt.figure(figsize=(20,20))
-    plt.subplot(1,4,1)
-    plt.imshow(img)
+    pyplot.figure(figsize=(20,20))
+    plt.pyplot.subplot(1,4,1)
+    pyplot.imshow(img)
     # looping every cluster     
     print('Image '+str(index+1))
     for i,cluster in enumerate(clusters):
-            
+
         # Fuzzy C Means
         new_time = time()
         
@@ -172,11 +173,11 @@ for index,rgb_img in enumerate(list_img):
         print('Bwarea : '+str(bwarea(bwfim3)))
         print()
 
-        plt.subplot(1,4,i+2)
-        plt.imshow(bwfim3)
+        pyplot.subplot(1,4,i+2)
+        pyplot.imshow(bwfim3)
         name = 'Cluster'+str(cluster)
-        plt.title(name)
+        pyplot.title(name)
 
     name = 'segmented'+str(index)+'.png'
-    plt.savefig(name)
+    pyplot.savefig(name)
     print()
